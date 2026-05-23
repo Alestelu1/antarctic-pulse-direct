@@ -120,20 +120,80 @@
 
   .grid-overlay {
     background-image:
-      linear-gradient(to right, oklch(0.78 0.13 215 / 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, oklch(0.78 0.13 215 / 0.06) 1px, transparent 1px);
-    background-size: 80px 80px;
+      linear-gradient(to right, oklch(0.78 0.13 215 / 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.78 0.13 215 / 0.08) 1px, transparent 1px),
+      linear-gradient(to right, oklch(0.78 0.13 215 / 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.78 0.13 215 / 0.03) 1px, transparent 1px);
+    background-size: 160px 160px, 160px 160px, 32px 32px, 32px 32px;
+  }
+
+  .graticule {
+    background-image:
+      linear-gradient(to right, oklch(0.78 0.13 215 / 0.10) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.78 0.13 215 / 0.10) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .graticule-fine {
+    background-image:
+      linear-gradient(to right, oklch(0.78 0.13 215 / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.78 0.13 215 / 0.04) 1px, transparent 1px);
+    background-size: 16px 16px;
   }
 
   .radar-overlay {
     background:
-      radial-gradient(circle at 50% 50%, transparent 0%, transparent 30%, oklch(0.78 0.13 215 / 0.04) 30.5%, transparent 31%),
-      radial-gradient(circle at 50% 50%, transparent 0%, transparent 60%, oklch(0.78 0.13 215 / 0.04) 60.5%, transparent 61%),
-      radial-gradient(circle at 50% 50%, transparent 0%, transparent 90%, oklch(0.78 0.13 215 / 0.04) 90.5%, transparent 91%);
+      radial-gradient(circle at 50% 50%, transparent 0%, transparent 20%, oklch(0.78 0.13 215 / 0.08) 20.3%, transparent 20.6%),
+      radial-gradient(circle at 50% 50%, transparent 0%, transparent 40%, oklch(0.78 0.13 215 / 0.06) 40.3%, transparent 40.6%),
+      radial-gradient(circle at 50% 50%, transparent 0%, transparent 60%, oklch(0.78 0.13 215 / 0.06) 60.3%, transparent 60.6%),
+      radial-gradient(circle at 50% 50%, transparent 0%, transparent 80%, oklch(0.78 0.13 215 / 0.05) 80.3%, transparent 80.6%),
+      linear-gradient(to right, transparent 49.9%, oklch(0.78 0.13 215 / 0.15) 50%, transparent 50.1%),
+      linear-gradient(to bottom, transparent 49.9%, oklch(0.78 0.13 215 / 0.15) 50%, transparent 50.1%);
+  }
+
+  .scanlines {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      oklch(0.78 0.13 215 / 0.025) 2px,
+      oklch(0.78 0.13 215 / 0.025) 3px
+    );
   }
 
   .vignette {
-    box-shadow: inset 0 0 200px 40px oklch(0.10 0.04 252 / 0.9);
+    box-shadow: inset 0 0 240px 60px oklch(0.08 0.03 252 / 0.95);
+  }
+
+  .corner-frame::before,
+  .corner-frame::after,
+  .corner-frame > .cf-bl,
+  .corner-frame > .cf-br {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: var(--cyan-signal);
+    pointer-events: none;
+    z-index: 5;
+  }
+  .corner-frame::before { top: 8px; left: 8px; border-top: 1px solid; border-left: 1px solid; }
+  .corner-frame::after  { top: 8px; right: 8px; border-top: 1px solid; border-right: 1px solid; }
+  .corner-frame > .cf-bl { bottom: 8px; left: 8px; border-bottom: 1px solid; border-left: 1px solid; }
+  .corner-frame > .cf-br { bottom: 8px; right: 8px; border-bottom: 1px solid; border-right: 1px solid; }
+
+  .doc-grayscale { filter: grayscale(60%) contrast(1.05) brightness(0.92); }
+  .doc-duotone {
+    filter: grayscale(100%) contrast(1.1) brightness(0.78);
+    mix-blend-mode: luminosity;
+  }
+
+  .ticker-marquee {
+    animation: marquee 60s linear infinite;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 
   .hairline-t { border-top: 1px solid var(--color-border); }
