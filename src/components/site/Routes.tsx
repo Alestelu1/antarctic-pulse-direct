@@ -20,21 +20,31 @@ export function Routes() {
         />
 
         <div className="grid grid-cols-12 gap-10 items-start">
-          <div className="col-span-12 lg:col-span-5 relative aspect-[4/5] overflow-hidden">
+          <div className="col-span-12 lg:col-span-5 relative aspect-[4/5] overflow-hidden corner-frame">
+            <span className="cf-bl" />
+            <span className="cf-br" />
             <img
               src={vessel}
               alt="Research vessel transiting the Southern Ocean near Puerto Williams"
               loading="lazy"
               width={1600}
               height={2000}
-              className="absolute inset-0 h-full w-full object-cover grayscale-[20%]"
+              className="absolute inset-0 h-full w-full object-cover doc-grayscale"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+            <div className="absolute inset-0 graticule-fine opacity-50" />
+            <div className="absolute inset-0 scanlines opacity-60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+            <div className="absolute top-4 left-4 right-4 flex items-start justify-between mono-label">
+              <span className="bg-background/80 px-2 py-1 text-primary">M/V LOG · 0314</span>
+              <span className="bg-background/80 px-2 py-1">f/5.6 · 1/250s</span>
+            </div>
             <div className="absolute bottom-6 left-6 right-6">
-              <div className="mono-label text-primary">M/V Aurora Australis · 54°56′S</div>
+              <div className="mono-label text-primary">M/V Aurora Australis · 54°56′S 67°37′W</div>
               <div className="font-display text-2xl mt-2">Day 03 — Drake Passage</div>
+              <div className="mono-label opacity-60 mt-2">Heading 198° · SOG 11.4 kt · Swell 4.2 m</div>
             </div>
           </div>
+
 
           <div className="col-span-12 lg:col-span-7">
             <div className="hairline-t">
