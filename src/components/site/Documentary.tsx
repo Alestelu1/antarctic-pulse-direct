@@ -27,24 +27,29 @@ export function Documentary() {
               href="#"
               className="bg-background group block relative overflow-hidden"
             >
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-[4/5] overflow-hidden corner-frame">
+                <span className="cf-bl" />
+                <span className="cf-br" />
                 <img
                   src={f.img}
                   alt={f.title}
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 doc-grayscale group-hover:[filter:grayscale(20%)_contrast(1.05)]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
-                <div className="absolute top-4 left-4 mono-label text-primary">{f.ep}</div>
-                <div className="absolute top-4 right-4 mono-label">{f.duration}</div>
+                <div className="absolute inset-0 graticule-fine opacity-40" />
+                <div className="absolute inset-0 scanlines opacity-50" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                <div className="absolute top-4 left-4 mono-label text-primary bg-background/70 px-2 py-0.5">{f.ep}</div>
+                <div className="absolute top-4 right-4 mono-label bg-background/70 px-2 py-0.5">{f.duration}</div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="mono-label mb-2">{f.chapter}</div>
+                  <div className="mono-label mb-2 text-primary">— {f.chapter}</div>
                   <h3 className="font-display text-3xl leading-tight">{f.title}</h3>
                   <div className="mono-label mt-4 text-primary opacity-0 group-hover:opacity-100 transition">
-                    ▷ Play documentary
+                    ▷ View dispatch
                   </div>
                 </div>
               </div>
+
             </a>
           ))}
         </div>
