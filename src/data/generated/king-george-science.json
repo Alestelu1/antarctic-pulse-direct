@@ -1,0 +1,50 @@
+{
+  "generated": true,
+  "canonicalSourceRepository": "Alestelu1/austral-beacon-ai-lab",
+  "sourceProjectionId": "antarctic-pulse-king-george-science-v1",
+  "sourceProjectionPath": "knowledge-base/projections/antarctic-pulse/king-george-science-v1.json",
+  "sharedProjectionId": "antarctic-gateway-king-george-v1",
+  "rules": {
+    "noTrafficStatistics": true,
+    "noCurrentOperationalConditions": true,
+    "canonicalClaimsOnly": true
+  },
+  "items": [
+    {
+      "entityId": "base-cientifica-profesor-julio-escudero",
+      "claimId": "escudero-identity-001",
+      "title": "Base Científica Profesor Julio Escudero",
+      "authority": "INACH",
+      "statement": "La Base Científica Profesor Julio Escudero es una instalación científica del Instituto Antártico Chileno.",
+      "status": "verified",
+      "sourceIds": ["inach-procien-base-escudero", "inach-bach-base-escudero"]
+    },
+    {
+      "entityId": "aerodromo-teniente-rodolfo-marsh",
+      "claimId": "marsh-claim-001",
+      "title": "Aeródromo Teniente Rodolfo Marsh Martin",
+      "authority": "DGAC",
+      "statement": "El Aeródromo Teniente Rodolfo Marsh Martin está ubicado en la Base Aérea Presidente Eduardo Frei Montalva, península Fildes de Isla Rey Jorge, y es administrado por la DGAC.",
+      "status": "verified",
+      "sourceIds": ["dgac-operatividad-marsh"]
+    },
+    {
+      "entityId": "bahia-fildes",
+      "claimId": "bahia-fildes-claim-001",
+      "title": "Bahía Fildes",
+      "authority": "DIRECTEMAR",
+      "statement": "Bahía Fildes se desarrolla entre la costa sur de Isla Rey Jorge y la costa noreste de Isla Nelson.",
+      "status": "verified",
+      "sourceIds": ["directemar-bahia-fildes-bunkering"]
+    },
+    {
+      "entityId": "villa-las-estrellas",
+      "claimId": "villa-estrellas-current-context-002",
+      "title": "Villa Las Estrellas",
+      "authority": "Fuerza Aérea de Chile",
+      "statement": "La Fuerza Aérea de Chile indica que Villa Las Estrellas hoy constituye parte integral de la Base Aérea Antártica Presidente Frei.",
+      "status": "verified_current",
+      "sourceIds": ["fach-antartica-villa-estrellas", "fach-villa-estrellas-viviendas-2025"]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { SectionHeader } from "./SectionHeader";
 import ice from "@/assets/ice-texture.jpg";
+import kingGeorgeKnowledge from "@/data/generated/king-george-science.json";
 
 export function Science() {
   const fields = [
@@ -39,6 +40,33 @@ export function Science() {
               <p className="text-muted-foreground leading-relaxed">{f.d}</p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-20">
+          <div className="flex flex-col gap-3 mb-8 max-w-3xl">
+            <span className="mono-label text-primary">Verified knowledge layer · King George Island</span>
+            <h3 className="font-display text-3xl md:text-4xl">Chilean science &amp; gateway infrastructure</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Canonical statements synchronized from the Austral Beacon AI Lab. Operational conditions and traffic statistics are intentionally excluded.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border/40 hairline-t hairline-b">
+            {kingGeorgeKnowledge.items.map((item) => (
+              <article key={item.claimId} className="bg-background/80 backdrop-blur-sm p-8 lg:p-10">
+                <div className="flex flex-wrap items-center gap-3 mb-5">
+                  <span className="mono-label text-primary">{item.authority}</span>
+                  <span className="mono-label opacity-45">{item.claimId}</span>
+                </div>
+                <h4 className="font-display text-2xl mb-3">{item.title}</h4>
+                <p className="text-muted-foreground leading-relaxed">{item.statement}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="mono-label opacity-45 mt-5">
+            Source projection: {kingGeorgeKnowledge.sourceProjectionId}
+          </p>
         </div>
       </div>
     </section>
